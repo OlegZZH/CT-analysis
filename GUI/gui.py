@@ -201,8 +201,8 @@ class mywindow(QtWidgets.QMainWindow):
         else:
             im = self.frames[int(len(self.frames) / 2)]
 
-        im = cv2.resize(im, (256, 256), interpolation=cv2.INTER_AREA)
-        im = im[:-40, :]
+        im = cv2.resize(im, (128, 128), interpolation=cv2.INTER_AREA)
+        im = im[:-20, :]
 
         im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
         im = cv2.GaussianBlur(im, (
@@ -233,18 +233,18 @@ class mywindow(QtWidgets.QMainWindow):
                 .trim(start_frame=int(cut_start / 100 * self.frame_count),
                       end_frame=int(cut_end / 100 * self.frame_count))
                 .setpts('PTS-STARTPTS')
-                .filter('scale', 256, 256)
+                .filter('scale', 128, 128)
                 .output('pipe:', format='rawvideo', pix_fmt='rgb24')
                 .run(capture_stdout=True)
         )
         self.video = (
             np
                 .frombuffer(out, np.uint8)
-                .reshape([-1, 256, 256, 3])
+                .reshape([-1, 128, 128, 3])
         )
 
         for i in self.video:
-            im_g = i[:-40, :]
+            im_g = i[:-20, :]
             im_g = cv2.cvtColor(im_g, cv2.COLOR_RGB2GRAY)
 
             im_g = cv2.GaussianBlur(im_g, (
@@ -295,7 +295,7 @@ class mywindow(QtWidgets.QMainWindow):
             self.ui.cheking_grid.addWidget(checkBox, n, 2, 1, 1)
 
     def prediction_diagnos(self, frame):
-        self.model_loaded = keras.models.load_model(os.path.abspath('../') + r"\DNN\lung_model15000_25000V2")
+        self.model_loaded = keras.models.load_model(os.path.abspath('../') + r"\DNN\lung_model30000_50000")
         frame = frame / 255
         d = self.model_loaded.predict(np.expand_dims(frame, axis=3))
         d = np.around(d)

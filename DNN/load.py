@@ -1,4 +1,5 @@
 import cv2
+import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.model_selection import train_test_split
 
@@ -11,10 +12,12 @@ def lod():
     frames_ill=[]
     n=0
 
-    while n<=15000:
+    while n<=30000:
         r,img = cap_heal.read()
         if r:
             n += 1
+            # img = cv2.resize(img, (128, 108), interpolation=cv2.INTER_AREA)
+
             frames_heal.append(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY))
             print(n)
         else:
@@ -22,17 +25,18 @@ def lod():
 
             break
     n=0
-    while n<=25000:
+    while n<=50000:
         r1, img1 = cap_ill.read()
         if r1:
             n += 1
+            # img1 = cv2.resize(img1, (128, 108), interpolation=cv2.INTER_AREA)
             frames_ill.append(cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY))
             print(n)
         else:
             break
     return frames_heal,frames_ill
 
-def data_lung(frames=45000,testS=0.2):
+def data_lung(frames=80000,testS=0.01):
     frames_heal, frames_ill=lod()
     frames_heal=np.array(frames_heal,dtype=np.uint8)
     heal_dignps=np.zeros(len(frames_heal)).astype(np.uint8)

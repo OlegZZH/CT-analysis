@@ -1,4 +1,7 @@
 import os
+
+from matplotlib import pyplot as plt
+
 os.environ["CUDA_VISIBLE_DEVICES"]="-1"
 from load import data_lung
 import numpy as np
@@ -20,7 +23,7 @@ x_test = np.expand_dims(x_test, axis=3)
 
 print(y_train_cat)
 model = keras.Sequential([
-    Conv2D(32, (3,3), padding='same', activation='relu', input_shape=(216, 256, 1)),
+    Conv2D(32, (3,3), padding='same', activation='relu', input_shape=(108, 128, 1)),
     MaxPooling2D((2, 2), strides=2),
     Conv2D(64, (3,3), padding='same', activation='relu'),
     MaxPooling2D((2, 2), strides=2),
@@ -36,20 +39,25 @@ model.compile(optimizer='adam',
              metrics=['binary_accuracy'])
 
 
-his = model.fit(x_train, y_train_cat, epochs=3, validation_split=0.2)
+his = model.fit(x_train, y_train_cat, epochs=3,batch_size=32,  validation_data=(x_test,y_test_cat))#, validation_data=(x_test,y_test_cat)
 
-p=model.predict(x_test)
-tr=y_test_cat
-accu=np.around (p)==np.around(tr)
-
-t=0
-f=0
-
-for i in accu:
-    if i.all():
-        t+=1
-    else:
-        f+=1
-
-print("True:{0} |   False:{1}".format(t,f))
-model.save("lung_model15000_25000")
+# p=model.predict(x_test)
+# tr=y_test_cat
+# accu=np.around (p)==np.around(tr)
+#
+# t=0
+# f=0
+#
+# for i in accu:
+#     if i.all():
+#         t+=1
+#     else:
+#         f+=1
+#
+# print("True:{0} |   False:{1}".format(t,f))
+model.save("lung_model30000_50000")
+fig, ax = plt.subplots()
+ax.plot(his.history["loss"],label = 'loss')
+ax.plot(his.history["val_loss"],label = 'val_loss')
+ax.legend()
+plt.show()
