@@ -269,7 +269,7 @@ class Ui_CT_main_win(object):
     def retranslateUi(self, CT_main_win):
         _translate = QtCore.QCoreApplication.translate
         CT_main_win.setWindowTitle(_translate("CT_main_win", "CT analyzer"))
-        self.label.setText(_translate("CT_main_win", "Select folder, video or image"))
+        self.label.setText(_translate("CT_main_win", "Select video image or DICOM file"))
         self.pushButton.setText(_translate("CT_main_win", "OPEN"))
         self.pushButton_2.setText(_translate("CT_main_win", "Cut"))
         self.pushButton_3.setText(_translate("CT_main_win", "   Play    "))

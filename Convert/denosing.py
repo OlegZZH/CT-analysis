@@ -15,8 +15,8 @@ while r:
     if r:
         plt.imshow(img, cmap="gray")
         plt.show()
-        img = cv2.resize(img, (256,256), interpolation=cv2.INTER_AREA)
-        img=img[:-40,:]
+        img = cv2.resize(img, (128,128), interpolation=cv2.INTER_AREA)
+        img=img[:-20,:]
         img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
         img = cv2.GaussianBlur(img, (5, 5), 5,cv2.BORDER_DEFAULT)
         ret, thresh1 = cv2.threshold(img, 50, 255, cv2.THRESH_BINARY)

@@ -39,9 +39,6 @@ class Ui_Settings_win(object):
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setObjectName("label_3")
         self.gridLayout.addWidget(self.label_3, 1, 0, 1, 1)
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout.addWidget(self.pushButton, 2, 1, 1, 1)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.gridLayout.addItem(spacerItem, 3, 1, 1, 1)
         self.horizontalLayout.addLayout(self.gridLayout)
@@ -70,7 +67,6 @@ class Ui_Settings_win(object):
         Settings_win.setWindowTitle(_translate("Settings_win", "Settings"))
         self.label_2.setText(_translate("Settings_win", "G Blur "))
         self.label_3.setText(_translate("Settings_win", "thresholdValue"))
-        self.pushButton.setText(_translate("Settings_win", "Apply"))
         self.settings_pixmap.setText(_translate("Settings_win", "TextLabel"))
 
 

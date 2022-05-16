@@ -2,7 +2,7 @@ import os
 
 from matplotlib import pyplot as plt
 
-os.environ["CUDA_VISIBLE_DEVICES"]="-1"
+# os.environ["CUDA_VISIBLE_DEVICES"]="-1"
 from load import data_lung
 import numpy as np
 from tensorflow import keras
@@ -23,7 +23,7 @@ x_test = np.expand_dims(x_test, axis=3)
 
 print(y_train_cat)
 model = keras.Sequential([
-    Conv2D(32, (3,3), padding='same', activation='relu', input_shape=(108, 128, 1)),
+    Conv2D(32, (3,3), padding='same', activation='relu', input_shape=(100, 100, 1)),
     MaxPooling2D((2, 2), strides=2),
     Conv2D(64, (3,3), padding='same', activation='relu'),
     MaxPooling2D((2, 2), strides=2),
@@ -39,7 +39,7 @@ model.compile(optimizer='adam',
              metrics=['binary_accuracy'])
 
 
-his = model.fit(x_train, y_train_cat, epochs=3,batch_size=32,  validation_data=(x_test,y_test_cat))#, validation_data=(x_test,y_test_cat)
+his = model.fit(x_train, y_train_cat, epochs=3,batch_size=6,  validation_data=(x_test,y_test_cat))#, validation_data=(x_test,y_test_cat)
 
 # p=model.predict(x_test)
 # tr=y_test_cat
@@ -55,7 +55,7 @@ his = model.fit(x_train, y_train_cat, epochs=3,batch_size=32,  validation_data=(
 #         f+=1
 #
 # print("True:{0} |   False:{1}".format(t,f))
-model.save("lung_model30000_50000")
+# model.save("lung_model30000_50000")
 fig, ax = plt.subplots()
 ax.plot(his.history["loss"],label = 'loss')
 ax.plot(his.history["val_loss"],label = 'val_loss')

@@ -48,12 +48,12 @@ class mywindow(QtWidgets.QMainWindow):
         if len(self.fileName) > 1:
             print(self.fileName)
             frames=[]
-            out = cv2.VideoWriter(r'Temp\comp_video.mp4', cv2.VideoWriter_fourcc(*'h263'), 10,(512, 512))
+            out = cv2.VideoWriter(r'Temp\comp_video.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 10,(512, 512))
             for i in self.fileName:
                 name=os.path.basename(i)
                 n, e = os.path.splitext(name)
-                if e==".jpg" or e==".png":
-                    img = cv2.imread(i)
+                if e==".jpg" or e==".png" or e==".PNG"or e==".JPG":
+                    img = cv2.imdecode(np.fromfile(i, dtype=np.uint8), cv2.IMREAD_COLOR)
                     img = cv2.resize(img, (512,512))
                     out.write(img)
                 if e==".mp4":
@@ -333,13 +333,13 @@ class mywindow(QtWidgets.QMainWindow):
         self.ui.pushButton_5.setEnabled(True)
 
 
+if __name__ == '__main__':
+    app = QtWidgets.QApplication([])
+    application = mywindow()
+    File = open("Theme/ElegantDark.qss", 'r')
+    with File:
+        qss = File.read()
+        app.setStyleSheet(qss)
+    application.show()
 
-app = QtWidgets.QApplication([])
-application = mywindow()
-File = open("Theme/ElegantDark.qss", 'r')
-with File:
-    qss = File.read()
-    app.setStyleSheet(qss)
-application.show()
-
-sys.exit(app.exec())
+    sys.exit(app.exec())
