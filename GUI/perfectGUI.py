@@ -16,8 +16,8 @@ from PyQt5.QtMultimediaWidgets import QVideoWidget
 from PyQt5.QtWidgets import QSlider
 from qtrangeslider import QLabeledRangeSlider
 
-from GUI.qtimeline import QTimeLine
-from GUI.settings import Ui_Settings_win
+from qtimeline import QTimeLine
+from settings import Ui_Settings_win
 
 
 def open_settings():
