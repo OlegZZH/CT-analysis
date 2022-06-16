@@ -2,5 +2,5 @@
 import os
 
 
-os.system("pythonw gui.pyw")
-# subprocess.run(["python","gui.pyw"])
+os.system("python gui.py")
+# subprocess.run(["python","gui.py"])

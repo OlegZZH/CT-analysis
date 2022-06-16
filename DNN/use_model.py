@@ -2,7 +2,7 @@ import os
 import numpy as np
 from tensorflow import keras
 os.environ["CUDA_VISIBLE_DEVICES"]="-1"
-from load import data_lung
+
 
 # X_train, X_test, y_train, y_test=data_lung(frames=30000,testS=0.01)
 # print(X_train.shape)
