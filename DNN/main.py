@@ -1,6 +1,4 @@
-# Опис файлу main.py
 import os
-
 from matplotlib import pyplot as plt
 
 os.environ["CUDA_VISIBLE_DEVICES"]="-1"

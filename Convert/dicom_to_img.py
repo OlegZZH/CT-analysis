@@ -33,7 +33,6 @@ for i in glob.glob(pathname=r"C:\Data set\22\Subject (469).rar", recursive=False
                 # print(os.path.join(root, f))
                 files.append(pydicom.dcmread(os.path.join(root, f)))
 
-
         slices = []
         for f in files:
             if  hasattr(f, 'SliceLocation')and  f.SeriesDescription in needed_filter   :

@@ -18,7 +18,6 @@ from settings import Ui_Settings_win
 
 
 
-
 # Таблиці стилей для подвійного слайдера
 QSS = """
 QSlider {

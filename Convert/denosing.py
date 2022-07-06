@@ -6,7 +6,6 @@ cap = cv2.VideoCapture(r"C:\Data set\Video\ill\ill_compilate1.mp4")
 r=True
 frames = []
 
-
 n=0
 
 while r:

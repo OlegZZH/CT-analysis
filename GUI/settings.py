@@ -5,7 +5,6 @@
 #
 
 
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 # Клас з описом обєктів вікна налаштувань

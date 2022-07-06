@@ -26,5 +26,4 @@ print(model_loaded.summary())
 #     else:
 #         f+=1
 #
-#
 # print("True:{0} |   False:{1}".format(t,f))

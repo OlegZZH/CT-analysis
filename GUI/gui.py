@@ -225,7 +225,6 @@ class mywindow(QtWidgets.QMainWindow,MediaPlayer):
         self.ui.pushButton_4.clicked.connect(self.learn)
         self.ui.pushButton_5.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.select))
 
-
         self.frame_bin = []
         self.video = []
         self.frames = []

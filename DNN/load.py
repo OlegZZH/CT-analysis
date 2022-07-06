@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.model_selection import train_test_split
 
+
 # Клас для завантаженя та поділу даних
 class LoadFile:
     def __init__(self):
