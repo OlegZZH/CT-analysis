@@ -6,18 +6,17 @@
 pip install -r GUI/requirements.txt
 ```
  Run gui.py 
- ![enter image description here](https://previews.dropbox.com/p/thumb/ABkjrNi-mCAuv2NX2b3kGhpIT0Ju4iBXGqoTlrOXIeUp20rrcqoVvvxfYY2OwRbJukGjjEbO5wUCic3KTwNaD_e--VtEyeBS2Jw2VWQ72N2DUbzcTIumguq0PIssPYCWQDx7vmMXslOtNWS6WvlQ7FzOABtd_KP9cn7JcXT_Z403WMkmMmeo6m4NynBM6d1abfFz8uyT0DMRvinSIQX7g6sl-APEzN2mMJ-CkYRrJXEDDbIpvKQUAutf3oDiEUhQM7wQyn9g3YL5DQPeR_Y06EOyVGKf3BsficYvHRgNG8fCtklhrrRFVaL0yO9WUaHMCSZoP2sExBr8X8EmwsvdvjzpxFoDjIKQ0lqvUQv3vpbMhicaectqjSP0Me_ZZGhxI_Y/p.png)
+ ![enter image description here](https://github.com/OlegZZH/CT-analysis/blob/master/Exemple/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA.PNG?raw=true)
  
  2. Select one or more files ( format .png .jpg .mp4 .dcm). If you select multiple files they will be combined into one. DICOM files will be sorted by SliceLocation.
- ![enter image description here](https://previews.dropbox.com/p/thumb/ABkb80J_pRhbCKp7bBsFN6Qt4_hIIx6fioAzrzBY85puFiEvdeyhxm0kZWdk5X57QC8AIgGuUTULNxrtzoKCZZkdMLbEFX4-KsvoX0hlDDJZTKR830__3kYflSF72BMBieHfEfUsJmpRvgr2Y-IhofrgKkbvi3StCZh0aG0CvqX9AgqGVziD2oAViRMF9ZOGWRK01Z_WimY1wdWtaODwUF4vWXC-uMu00GYy0b6vsSlg9jgiiAlvF66tsgQmOgs0zvCDPyYJu1VcR7EueLW5YIVdY6wC0K_dyTZ0U7qoWHXiLtjC7kYbU9GvSInp0z3sscBJL78Z974U6TPCgw8Ob-TjGvhVsUfbQITitkOAUnYbk_80iYon6QSRbZrtEzlUIQQ/p.png)
- 
+ ![enter image description here](https://github.com/OlegZZH/CT-analysis/blob/master/Exemple/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA1.PNG?raw=true)
  
  3. Select the desired video fragment and set up pre-processing
- ![enter image description here](https://previews.dropbox.com/p/thumb/ABnz8bF5A9VS4TV_5QrtWd12Yurn4EYGaibVa5tFLSPbi8fp72QR1SpbSZrKG1fN3FLHm_bPNTiii1ZRul1ZJivURTMlT7CeN2Y9pPiGVxzsi43nDRrjnA1NgjDeA1GDykDid8OxC4-JNOWunP8akbqgR1681E1-I23Ti-bYj9ArRA-uBlxpY7lV4X2wpDSySmHtGJxy4GSu5STBEvQ_xjIAhrl9TBDJDgokSbw3lWkPJT5YFIyCX7kAp2033EAbl-tHIM3i75gHaEJPnGx8OZRKw2IYd-PCPa-YntfzFn33FjOJ6SR0mU3cvMbjMAmq9h7wUMT5TyweI8kS7qNe_QFPlmCw8YrcT03Niu_B1SMcshjuBFQjoFRlTwFodDiAb4I/p.png)
+ ![enter image description here](https://github.com/OlegZZH/CT-analysis/blob/master/Exemple/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA2.PNG?raw=true)
 
- ![enter image description here](https://previews.dropbox.com/p/thumb/ABmILkOrTXLB894fgd4YnJ_RkqLQURQzBwTvtl6zNcr6ODU_Z_LnLLVQvjVI6xVB8QSE_rwPv4SJDjN48y7ZQpY6AVgfwwkwXa1m36XPTtP2KVpiSD_8xKoD2vC-fmpExLGgsf1oYv34Mi0vfW5LH6s76eaHxr5hEwE9IVBhPr6CE-lEhd4z6TszC9A7KhQlVeqtHebx1kj1BTYBIRL38H9rjA25VKNnIOJPKxt0HzaGk5THFIUeSlfz8brPxYdt26dsqTZYTd0yyleM6GN6T1rs7VpGfiUhvPkGBZ25bjvhydlEPQY42Dfvf9fNNyYxv4VjphywtHGIb4FMJar0TxX0cm2N-4ZGNvNBhbAaxdTmhqLg3oYOq-8mP0DxWM5Yy70/p.png)
+ ![enter image description here](https://github.com/OlegZZH/CT-analysis/blob/master/Exemple/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA3.PNG?raw=true)
 
  4. You will receive the result of the analysis of each image and a proposal to retrain the neural network
- ![enter image description here](https://previews.dropbox.com/p/thumb/ABk0YfcxzXtXnEPIHj40mKuzwpalNytT2PiaJfUA-TXIKEk9u5SfLuIatt1ZahvM2A5H3rQvCJsdxhu38in9bJn-Zrym9VDy92lu89l24kR1DzI1PFAtTwSqeDKpBrNKIH2N_-5azE7QiQRTgmUQX8kMwuc6uoaBUO9e2jANqZVmguaCT2iQA33hYGqJwibmen2idXmKrOEhe7emb1CX0J7xyVsm0Egf-E8SZDffy2CdJ3WTsd4LIUqNeZMb4g2R1255kKJcpWAKOxU_8OxxM8xvuyRupWKNvtiLZUHjhRHi-81te2fTk2h-VWn0Xs2S_vU5f3K07T2YuZtOgriwDxQzaaEBeSpDqTqh4ZnOdzFp6E4GzpWv3j7nly1vx7mhhTs/p.png)
+ ![enter image description here](https://github.com/OlegZZH/CT-analysis/blob/master/Exemple/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA4.PNG?raw=true)
 
 **
