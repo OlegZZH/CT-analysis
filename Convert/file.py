@@ -22,6 +22,7 @@ for f in files:
     else:
         skipcount = skipcount + 1
 
+
 # print("skipped, no SliceLocation: {}".format(skipcount))
 
 # ensure they are in the correct order

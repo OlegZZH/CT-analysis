@@ -18,7 +18,7 @@ class Ui_Settings_win(object):
         :return:
         """
         Settings_win.setObjectName("Settings_win")
-        Settings_win.resize(410, 320)
+        Settings_win.resize(410, 220)
         Settings_win.setWindowIcon(QtGui.QIcon('Icon/setting_ico.png'))
         self.centralwidget = QtWidgets.QWidget(Settings_win)
         self.centralwidget.setObjectName("centralwidget")

@@ -10,6 +10,7 @@ from tensorflow import keras
 import tensorflow as tf
 from tensorflow.keras.layers import Dense, Flatten, Conv2D, MaxPooling2D
 
+
 # Клас нейронної мережі
 
 
