@@ -1,7 +1,7 @@
 import os
 from matplotlib import pyplot as plt
 
-os.environ["CUDA_VISIBLE_DEVICES"]="-1"
+# os.environ["CUDA_VISIBLE_DEVICES"]="-1"
 from load import LoadFile
 import numpy as np
 from tensorflow import keras
@@ -102,7 +102,7 @@ class NN:
 
 if __name__ == '__main__':
     nn=NN()
-    nn.use()
-    # nn.covud_NN()
-    # nn.learn()
+    # nn.use()
+    nn.covud_NN()
+    nn.learn()
     # nn.save()

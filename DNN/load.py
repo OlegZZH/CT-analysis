@@ -22,7 +22,7 @@ class LoadFile:
         frames_ill=[]
         n=0
 
-        while n<=10000:
+        while n<=1000:
             r,img = self.cap_heal.read()
             if r:
                 n += 1
@@ -35,7 +35,7 @@ class LoadFile:
 
                 break
         n=0
-        while n<=1:
+        while n<=5000:
             r1, img1 = self.cap_ill.read()
             if r1:
                 n += 1
@@ -46,7 +46,7 @@ class LoadFile:
                 break
         return frames_heal,frames_ill
 
-    def data_lung(self,frames=80000,testS=0.2):
+    def data_lung(self,frames=80000,testS=0.3):
         """
         Метод реалізує перемішування та поділ даних
         :param frames: Кількість знімків яку поверне метод
@@ -63,6 +63,6 @@ class LoadFile:
         y=np.append(heal_dignps,ill_dignps)
         del heal_dignps,ill_dignps
 
-        # X_train, X_test, y_train, y_test=train_test_split(X, y, test_size=testS,random_state=12)
-        return X[:int(frames*(1-testS))],X[int(frames*(1-testS)):],y[:int(frames*(1-testS))],y[int(frames*(1-testS)):]
+        X_train, X_test, y_train, y_test=train_test_split(X, y, test_size=testS, shuffle=True)
+        return X_train, X_test, y_train, y_test
 

@@ -151,29 +151,28 @@ class MediaPlayer(QtWidgets.QWidget):
         self.ui.pushButton_3.setEnabled(False)
         self.ui.label_2.setText("Error: " + self.ui.mediaPlayer.errorString())
 
+
 class Settings(QtWidgets.QMainWindow):
     def __init__(self):
         super(Settings, self).__init__()
 
-
         self.ui_settings = Ui_Settings_win()
         self.ui_settings.setupUi(self)
 
-
-    def open_settings(self,frames, show=True):
+    def open_settings(self, frames, show=True):
         """
         Відкриття вікна налаштувань
         :param show: Від цого параметру залежить чи буде показуватись вікно
         :return:
         """
-        self.ui_settings.doubleSpinBox_Blur.valueChanged.connect(lambda : self.draw_preview(frames))
-        self.ui_settings.spinBox_thresholdValue.valueChanged.connect(lambda : self.draw_preview(frames))
+        self.ui_settings.doubleSpinBox_Blur.valueChanged.connect(lambda: self.draw_preview(frames))
+        self.ui_settings.spinBox_thresholdValue.valueChanged.connect(lambda: self.draw_preview(frames))
         self.draw_preview(frames)
 
         if show:
             self.show()
 
-    def draw_preview(self,frames):
+    def draw_preview(self, frames):
         """
         Попередній перегляд у вікні налаштувань
         :return:
@@ -203,14 +202,14 @@ class Settings(QtWidgets.QMainWindow):
             QPixmap(QImage(im, im.shape[1], im.shape[0], QImage.Format_Indexed8)))
 
 
-class mywindow(QtWidgets.QMainWindow,MediaPlayer):
+class mywindow(QtWidgets.QMainWindow, MediaPlayer):
 
     def __init__(self):
 
         super(mywindow, self).__init__()
         self.ui = Ui_CT_main_win()
         self.ui.setupUi(self)
-        self.sett=Settings()
+        self.sett = Settings()
 
         self.ui.pushButton.clicked.connect(self.openFile)
         self.ui.pushButton_3.clicked.connect(self.play)
@@ -218,7 +217,7 @@ class mywindow(QtWidgets.QMainWindow,MediaPlayer):
         self.ui.mediaPlayer.positionChanged.connect(self.positionChanged)
         self.ui.mediaPlayer.setNotifyInterval(30)
 
-        self.ui.actionSettings.triggered.connect(lambda: self.sett.open_settings(self.frames,True))
+        self.ui.actionSettings.triggered.connect(lambda: self.sett.open_settings(self.frames, True))
         self.ui.actionClose.triggered.connect(self.close)
         self.ui.actionClose_File.triggered.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.select))
         self.ui.pushButton_2.clicked.connect(self.cutVideo)
@@ -230,8 +229,6 @@ class mywindow(QtWidgets.QMainWindow,MediaPlayer):
         self.frames = []
 
         self.model_loaded = None
-
-
 
     def video_to_pixmap(self, fileName):
         """
@@ -270,7 +267,6 @@ class mywindow(QtWidgets.QMainWindow,MediaPlayer):
         self.ui.qtimeline.duration = self.frame_count / fps
         self.ui.qtimeline.videoSamples = videoSample
 
-
     def cutVideo(self):
         """
         Цей метод обрізає відео виконує аналізує знімки та виводить їх на екран
@@ -301,7 +297,8 @@ class mywindow(QtWidgets.QMainWindow,MediaPlayer):
             im_g = cv2.cvtColor(im_g, cv2.COLOR_RGB2GRAY)
 
             im_g = cv2.GaussianBlur(im_g, (
-                int(self.sett.ui_settings.doubleSpinBox_Blur.value()), int(self.sett.ui_settings.doubleSpinBox_Blur.value())), 5,
+                int(self.sett.ui_settings.doubleSpinBox_Blur.value()),
+                int(self.sett.ui_settings.doubleSpinBox_Blur.value())), 5,
                                     cv2.BORDER_DEFAULT)
 
             ret, thresh1 = cv2.threshold(im_g, int(self.sett.ui_settings.spinBox_thresholdValue.value()), 255,
