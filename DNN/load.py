@@ -47,6 +47,7 @@ class LoadFile:
         return frames_heal,frames_ill
 
     def data_lung(self,frames=80000,testS=0.3):
+
         """
         Метод реалізує перемішування та поділ даних
         :param frames: Кількість знімків яку поверне метод
